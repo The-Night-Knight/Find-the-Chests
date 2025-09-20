@@ -1,0 +1,104 @@
+[gd_scene load_steps=26 format=3 uid="uid://daqf8aa23atse"]
+
+[ext_resource type="PackedScene" uid="uid://espj372h2oov" path="res://Town/town_square.tscn" id="1_k25s5"]
+[ext_resource type="PackedScene" uid="uid://bcs03b6pnb1ao" path="res://Town/right_of_town_square.tscn" id="2_7lcq6"]
+[ext_resource type="PackedScene" uid="uid://cjdamq0pk4v3h" path="res://Town/river_middle.tscn" id="3_cc6rs"]
+[ext_resource type="PackedScene" uid="uid://c3b1l2w8e1uir" path="res://Town/above_middle_river.tscn" id="4_2ku7c"]
+[ext_resource type="PackedScene" uid="uid://ch4jknsv6q3mi" path="res://Town/top_right_corner.tscn" id="5_eykaa"]
+[ext_resource type="PackedScene" uid="uid://ch23h1ge1jvj" path="res://Town/grass_top_right.tscn" id="6_dbsrq"]
+[ext_resource type="PackedScene" uid="uid://bkii1af32f7dy" path="res://Town/grass_bottom_right.tscn" id="7_my808"]
+[ext_resource type="PackedScene" uid="uid://de2fajxh6rftg" path="res://Town/below_middle_river.tscn" id="8_lylcy"]
+[ext_resource type="PackedScene" uid="uid://crdgeq5pi5pe1" path="res://Town/above_town_square.tscn" id="9_mjwyb"]
+[ext_resource type="PackedScene" uid="uid://cbbja3cf36520" path="res://Town/left_of_top_right_corner.tscn" id="10_7lcq6"]
+[ext_resource type="PackedScene" uid="uid://ddtrduo2cw00j" path="res://Town/top_middle.tscn" id="11_cc6rs"]
+[ext_resource type="PackedScene" uid="uid://bbll2klydtrvg" path="res://Town/top_left.tscn" id="12_eykaa"]
+[ext_resource type="PackedScene" uid="uid://d2iagwt7lkq8g" path="res://Town/right_of_top_left.tscn" id="13_dbsrq"]
+[ext_resource type="PackedScene" uid="uid://bwuxiwq5hgvx8" path="res://Town/top_left_middle.tscn" id="14_dbsrq"]
+[ext_resource type="PackedScene" uid="uid://dc5ocun0d35x" path="res://Town/below_town_square.tscn" id="15_my808"]
+[ext_resource type="PackedScene" uid="uid://c837xj28vhjn4" path="res://Town/bottom_left_middle.tscn" id="16_lylcy"]
+[ext_resource type="PackedScene" uid="uid://defy8o3a0jqmq" path="res://Town/below_top_left.tscn" id="17_mjwyb"]
+[ext_resource type="PackedScene" uid="uid://tfpdqybtwjee" path="res://Town/above_bottom_left.tscn" id="18_8wuxw"]
+[ext_resource type="PackedScene" uid="uid://dnjr5xjdyytax" path="res://Town/left_of_town_square.tscn" id="19_atm42"]
+[ext_resource type="PackedScene" uid="uid://b4x70hfelnnmv" path="res://Town/left_middle.tscn" id="20_sbbmv"]
+[ext_resource type="PackedScene" uid="uid://df70wh02pddym" path="res://Town/bottom_left_corner.tscn" id="21_tn1jf"]
+[ext_resource type="PackedScene" uid="uid://ccj7yy0u4oyof" path="res://Town/right_of_bottom_left.tscn" id="22_73ngo"]
+[ext_resource type="PackedScene" uid="uid://dwbfmlrerr5ek" path="res://Town/bottom_middle.tscn" id="23_dahke"]
+[ext_resource type="PackedScene" uid="uid://dupf37r1ydvt3" path="res://Town/left_of_bottom_right.tscn" id="24_ja3cj"]
+[ext_resource type="PackedScene" uid="uid://bnx16o7470c4k" path="res://Town/bottom_right_corner.tscn" id="25_ja3cj"]
+
+[node name="FULL" type="Node2D"]
+
+[node name="Town Square" parent="." instance=ExtResource("1_k25s5")]
+position = Vector2(14, 0)
+
+[node name="Right of Town Square" parent="." instance=ExtResource("2_7lcq6")]
+position = Vector2(1166, 0)
+
+[node name="River Middle" parent="." instance=ExtResource("3_cc6rs")]
+position = Vector2(2318, 0)
+
+[node name="Above Middle River" parent="." instance=ExtResource("4_2ku7c")]
+position = Vector2(2318, -671)
+
+[node name="Top Right Corner" parent="." instance=ExtResource("5_eykaa")]
+position = Vector2(2319, -1343)
+
+[node name="Grass Top Right" parent="." instance=ExtResource("6_dbsrq")]
+position = Vector2(1166, -672)
+
+[node name="Grass Bottom Right" parent="." instance=ExtResource("7_my808")]
+position = Vector2(1165, 672)
+
+[node name="Below Middle River" parent="." instance=ExtResource("8_lylcy")]
+position = Vector2(2317, 672)
+
+[node name="Above Town Square" parent="." instance=ExtResource("9_mjwyb")]
+position = Vector2(14, -672)
+
+[node name="Left of Top Right Corner" parent="." instance=ExtResource("10_7lcq6")]
+position = Vector2(1167, -1344)
+
+[node name="Top Middle" parent="." instance=ExtResource("11_cc6rs")]
+position = Vector2(15, -1344)
+
+[node name="Top Left" parent="." instance=ExtResource("12_eykaa")]
+position = Vector2(-2289, -1343)
+
+[node name="Right of Top Left" parent="." instance=ExtResource("13_dbsrq")]
+position = Vector2(-1137, -1343)
+
+[node name="Top Left Middle" parent="." instance=ExtResource("14_dbsrq")]
+position = Vector2(-1138, -672)
+
+[node name="Below Town Square" parent="." instance=ExtResource("15_my808")]
+position = Vector2(13, 672)
+
+[node name="Bottom Left Middle" parent="." instance=ExtResource("16_lylcy")]
+position = Vector2(-1139, 672)
+
+[node name="Below Top Left" parent="." instance=ExtResource("17_mjwyb")]
+position = Vector2(-2291, -671)
+
+[node name="Above Bottom Left" parent="." instance=ExtResource("18_8wuxw")]
+position = Vector2(-2291, 672)
+
+[node name="Left of Town Square" parent="." instance=ExtResource("19_atm42")]
+position = Vector2(-1138, 0)
+
+[node name="Left Middle" parent="." instance=ExtResource("20_sbbmv")]
+position = Vector2(-2290, 0)
+
+[node name="Bottom Left Corner" parent="." instance=ExtResource("21_tn1jf")]
+position = Vector2(-2291, 1344)
+
+[node name="Right of Bottom Left" parent="." instance=ExtResource("22_73ngo")]
+position = Vector2(-1139, 1344)
+
+[node name="Bottom Middle" parent="." instance=ExtResource("23_dahke")]
+position = Vector2(13, 1344)
+
+[node name="Left of Bottom Right" parent="." instance=ExtResource("24_ja3cj")]
+position = Vector2(1165, 1343)
+
+[node name="Bottom Right Corner" parent="." instance=ExtResource("25_ja3cj")]
+position = Vector2(2317, 1344)

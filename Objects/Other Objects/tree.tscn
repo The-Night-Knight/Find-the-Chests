@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bviia4fvaau30"]
+
+[ext_resource type="Texture2D" uid="uid://1ya53mwcp84s" path="res://Sprites/Object Sprite Sheet.png" id="1_v2dr4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3uhy"]
+atlas = ExtResource("1_v2dr4")
+region = Rect2(1.95746, 30.4064, 27.0836, 31.2258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvkrl"]
+size = Vector2(20, 7.91946)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihtx6"]
+size = Vector2(20, 1.66443)
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+scale = Vector2(2.24074, 2.40323)
+texture = SubResource("AtlasTexture_p3uhy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, 11.8658)
+shape = SubResource("RectangleShape2D_xvkrl")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D2"]
+y_sort_enabled = true
+position = Vector2(0, 7.07382)
+rotation = 3.14032
+shape = SubResource("RectangleShape2D_ihtx6")
+one_way_collision = true

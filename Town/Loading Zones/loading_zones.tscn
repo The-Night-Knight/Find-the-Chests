@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://nkw6knapyhnr"]
+
+[ext_resource type="PackedScene" uid="uid://44etametrt0i" path="res://Town/Loading Zones/top.tscn" id="1_58ets"]
+[ext_resource type="PackedScene" uid="uid://b57myxkhahmja" path="res://Town/Loading Zones/bottom.tscn" id="2_7x7rh"]
+[ext_resource type="PackedScene" uid="uid://b5k3rw352i1t4" path="res://Town/Loading Zones/left.tscn" id="3_8wagv"]
+[ext_resource type="PackedScene" uid="uid://0vdxlfr8ny0u" path="res://Town/Loading Zones/right.tscn" id="4_d48vt"]
+
+[node name="Loading Zones" type="Node2D"]
+scale = Vector2(3.25, 4.86364)
+
+[node name="Top" parent="." instance=ExtResource("1_58ets")]
+position = Vector2(-53.5385, -39.8878)
+
+[node name="Bottom" parent="." instance=ExtResource("2_7x7rh")]
+
+[node name="Left" parent="." instance=ExtResource("3_8wagv")]
+
+[node name="Right" parent="." instance=ExtResource("4_d48vt")]
+position = Vector2(0.615385, 0)

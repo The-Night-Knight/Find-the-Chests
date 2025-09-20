@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://evbblyospylm"]
+
+[ext_resource type="Script" uid="uid://co1jfh6vql48c" path="res://Start Scenes/info.gd" id="1_m2l0f"]
+[ext_resource type="FontFile" uid="uid://mb8b1post4hv" path="res://BitPotion.ttf" id="1_w2vjq"]
+[ext_resource type="Texture2D" uid="uid://damikrublmbp0" path="res://Sprites/Buttons.png" id="3_w7ng1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dscp"]
+atlas = ExtResource("3_w7ng1")
+region = Rect2(63.3, 35.8707, 32.6555, 23.3254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyax5"]
+atlas = ExtResource("3_w7ng1")
+region = Rect2(95.9555, 36.8037, 32.0445, 22.3924)
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2l0f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.67, 0.604228, 0.4623, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_right = 576.0
+offset_bottom = 518.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_w2vjq")
+theme_override_font_sizes/font_size = 50
+text = "This game uses the text set BitPotion from itch.io.
+Other then that I did all everything else! From music and art to coding and desgining.
+I used Pixel Studio to create the pixel art and GarageBand for the music.
+This is my first Game Jam so I hope you enjoy what I cooked up! I know I enjoyed making it!
+
+
+
+BTW I wasn't able to finish everything I wanted to do before the end of the Jam, so this game is unfinished, but it's \"playable\" so I thought I might as well turn it in!"
+autowrap_mode = 2
+
+[node name="Back Button" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+offset_right = 246.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_3dscp")
+texture_pressed = SubResource("AtlasTexture_hyax5")
+stretch_mode = 0
+
+[connection signal="pressed" from="ColorRect/Back Button" to="." method="_on_back_button_pressed"]

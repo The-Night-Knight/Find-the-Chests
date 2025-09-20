@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://0vnbcy54u8xk"]
+
+[ext_resource type="Texture2D" uid="uid://1ya53mwcp84s" path="res://Sprites/Object Sprite Sheet.png" id="1_bw5n7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj87b"]
+atlas = ExtResource("1_bw5n7")
+region = Rect2(34.4578, 40.284, 28.0395, 20.0737)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cxjs"]
+size = Vector2(28, 20)
+
+[node name="Bush" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_lj87b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_0cxjs")

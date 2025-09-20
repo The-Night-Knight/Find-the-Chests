@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxhlx1o30f2l"]
+
+[ext_resource type="Texture2D" uid="uid://cn8sp575hswbe" path="res://Sprites/Chest and Key.png" id="1_wbrmi"]
+[ext_resource type="FontFile" uid="uid://mb8b1post4hv" path="res://BitPotion.ttf" id="2_k0c04"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0c04"]
+atlas = ExtResource("1_wbrmi")
+region = Rect2(73, 0, 15, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvwbu"]
+radius = 41.1096
+
+[node name="Key" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_k0c04")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_jvwbu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 222.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_k0c04")
+theme_override_font_sizes/normal_font_size = 25

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://lknddnu2ii8f"]
+
+[ext_resource type="Texture2D" uid="uid://bbk80v7dh5vsb" path="res://Sprites/Houses.png" id="1_ek630"]
+[ext_resource type="Script" uid="uid://cv0x2cxp3qhec" path="res://Objects/Houses/house_front.gd" id="1_jef4c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jef4c"]
+atlas = ExtResource("1_ek630")
+region = Rect2(32.6372, 2.59958, 31.7583, 27.399)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgvrs"]
+size = Vector2(122.475, 78.2963)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hujp6"]
+size = Vector2(28.459, 21.7778)
+
+[node name="Brown House" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_jef4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.10543e-15, -67)
+scale = Vector2(5.67742, 6.74074)
+texture = SubResource("AtlasTexture_jef4c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0.25, 0.5)
+scale = Vector2(0.983871, 0.964286)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.77869, -38.8889)
+shape = SubResource("RectangleShape2D_tgvrs")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2, 20)
+scale = Vector2(0.983871, 0.964286)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.762294, -10.3704)
+shape = SubResource("RectangleShape2D_hujp6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

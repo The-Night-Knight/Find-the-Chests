@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5k3rw352i1t4"]
+
+[ext_resource type="Script" uid="uid://dih2be6arkdlu" path="res://Town/Loading Zones/left.gd" id="1_etcpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbwpk"]
+size = Vector2(35, 674)
+
+[node name="Left" type="Area2D"]
+script = ExtResource("1_etcpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, 322)
+shape = SubResource("RectangleShape2D_vbwpk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

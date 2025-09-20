@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7anqyjeon00e"]
+
+[ext_resource type="Script" uid="uid://cebth74007go5" path="res://Objects/Other Objects/Chests/chest 1.gd" id="1_ayd7p"]
+[ext_resource type="Texture2D" uid="uid://cn8sp575hswbe" path="res://Sprites/Chest and Key.png" id="2_15qno"]
+[ext_resource type="FontFile" uid="uid://mb8b1post4hv" path="res://BitPotion.ttf" id="3_w32fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rod5r"]
+atlas = ExtResource("2_15qno")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxjmb"]
+atlas = ExtResource("2_15qno")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vil0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rod5r")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxjmb")
+}],
+"loop": true,
+"name": &"Open ",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rod5r"]
+size = Vector2(30, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ruf1"]
+radius = 41.1096
+
+[node name="Chest Closed" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ayd7p")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vil0t")
+animation = &"Closed"
+autoplay = "Closed"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_rod5r")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_3ruf1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 222.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("3_w32fn")
+theme_override_font_sizes/normal_font_size = 25
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]

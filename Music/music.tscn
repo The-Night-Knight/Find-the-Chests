@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpcd13q62ohin"]
+
+[ext_resource type="Script" uid="uid://dpymawqnwvm5x" path="res://Music/start_screens.gd" id="1_d7ysw"]
+
+[node name="Music" type="AudioStreamPlayer"]
+script = ExtResource("1_d7ysw")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://44etametrt0i"]
+
+[ext_resource type="Script" uid="uid://dfqecwh0fqcwf" path="res://Town/Loading Zones/top.gd" id="1_xwttg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e85yi"]
+size = Vector2(3825.25, 243.182)
+
+[node name="Top" type="Area2D"]
+scale = Vector2(0.307692, 0.205607)
+script = ExtResource("1_xwttg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1862.25, -97.273)
+shape = SubResource("RectangleShape2D_e85yi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs85di7uicdj7"]
+
+[ext_resource type="Texture2D" uid="uid://bk46x87ik4dt7" path="res://Sprites/More Objects.png" id="1_afgio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qptn1"]
+atlas = ExtResource("1_afgio")
+region = Rect2(0, 8, 96, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qj7fo"]
+size = Vector2(95, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afgio"]
+size = Vector2(94.8571, 9.69307)
+
+[node name="Counter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(118, -38.5)
+scale = Vector2(4.375, 4.20833)
+texture = SubResource("AtlasTexture_qptn1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.914286, -2.73267)
+shape = SubResource("RectangleShape2D_qj7fo")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D2"]
+position = Vector2(-0.685711, 7.39109)
+rotation = -3.13467
+shape = SubResource("RectangleShape2D_afgio")
+one_way_collision = true

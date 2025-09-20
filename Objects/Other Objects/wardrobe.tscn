@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://qagejjadk1vi"]
+
+[ext_resource type="Texture2D" uid="uid://bk46x87ik4dt7" path="res://Sprites/More Objects.png" id="1_irrav"]
+[ext_resource type="Script" uid="uid://c5m7t1li07h47" path="res://Objects/Other Objects/wardrobe.gd" id="1_qw83a"]
+[ext_resource type="FontFile" uid="uid://mb8b1post4hv" path="res://BitPotion.ttf" id="3_oh0be"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw83a"]
+atlas = ExtResource("1_irrav")
+region = Rect2(6, 64, 20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh0be"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dj87"]
+
+[node name="Wardrobe" type="Node2D"]
+script = ExtResource("1_qw83a")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(7.01978, 6.1218)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 6)
+texture = SubResource("AtlasTexture_qw83a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_oh0be")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+position = Vector2(0, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_2dj87")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 212.0
+offset_bottom = 76.0
+theme_override_fonts/normal_font = ExtResource("3_oh0be")
+theme_override_font_sizes/normal_font_size = 35
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Node2D/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp1x8a7dfrryj"]
+
+[ext_resource type="Script" uid="uid://dseqlgbrcsem2" path="res://ui.gd" id="1_fyqef"]
+[ext_resource type="FontFile" uid="uid://mb8b1post4hv" path="res://BitPotion.ttf" id="2_m6e0p"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyqef")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_right = 110.0
+offset_bottom = 25.0
+theme_override_fonts/normal_font = ExtResource("2_m6e0p")
+theme_override_font_sizes/normal_font_size = 25
+text = "Gold"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+offset_top = 20.0
+offset_right = 115.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("2_m6e0p")
+theme_override_font_sizes/normal_font_size = 25
+text = "Health"

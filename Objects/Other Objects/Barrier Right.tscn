@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://be7hww8r00m7t"]
+
+[ext_resource type="Texture2D" uid="uid://1ya53mwcp84s" path="res://Sprites/Object Sprite Sheet.png" id="1_3vg86"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0laj"]
+atlas = ExtResource("1_3vg86")
+region = Rect2(0, 0, 31.9088, 30.4064)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nihi"]
+size = Vector2(31, 31)
+
+[node name="Barrier ->" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_s0laj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_2nihi")

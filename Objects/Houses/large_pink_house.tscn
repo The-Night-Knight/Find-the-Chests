@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4xycpohhtico"]
+
+[ext_resource type="Texture2D" uid="uid://bbk80v7dh5vsb" path="res://Sprites/Houses.png" id="1_8ecir"]
+[ext_resource type="Script" uid="uid://d3kod45hgnkq8" path="res://Objects/Houses/large_house.gd" id="1_xb1ch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb1ch"]
+atlas = ExtResource("1_8ecir")
+region = Rect2(1.47962, 31.681, 25.4905, 30.2699)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33vc4"]
+size = Vector2(21, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unggj"]
+size = Vector2(17, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu5ge"]
+size = Vector2(63.5, 35)
+
+[node name="Large Pink House" type="Node2D"]
+script = ExtResource("1_xb1ch")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.99999, -68.4517)
+scale = Vector2(9.88923, 9.153)
+texture = SubResource("AtlasTexture_xb1ch")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, -66)
+scale = Vector2(2.19761, 2.4517)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(37.5, 36)
+shape = SubResource("RectangleShape2D_33vc4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-2, -66)
+scale = Vector2(2.19761, 2.4517)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(18.5, 26)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(46, 1)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(35, 15)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(18, 7)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(31, -4)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(46, -16)
+shape = SubResource("RectangleShape2D_unggj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, -66)
+scale = Vector2(2.19761, 2.4517)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-18, 21)
+shape = SubResource("RectangleShape2D_vu5ge")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
